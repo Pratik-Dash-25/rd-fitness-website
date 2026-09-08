@@ -1,0 +1,130 @@
+<svg viewBox="0 0 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Top text curved path for "FITNESS" -->
+    <path id="top-curve-path" d="M 80,250 A 170,170 0 0,1 420,250" fill="none" />
+    
+    <!-- Bottom text curved path for "RD FITNESS" -->
+    <path id="bottom-curve-path" d="M 64,250 A 206,206 0 0,0 436,250" fill="none" />
+  </defs>
+
+  <!-- Outer Base Circle (Black) -->
+  <circle cx="250" cy="250" r="248" fill="#000000" />
+
+  <!-- Outer Bold White Ring Border -->
+  <circle cx="250" cy="250" r="236" fill="#000000" stroke="#ffffff" stroke-width="16" />
+
+  <!-- Inner White Disc with crisp black border -->
+  <circle cx="250" cy="250" r="148" fill="#ffffff" stroke="#000000" stroke-width="7" />
+
+  <!-- Curved Top Text: FITNESS -->
+  <text
+    fill="#ffffff"
+    font-family="'Impact', 'Arial Black', 'Trebuchet MS', sans-serif"
+    font-size="48"
+    font-weight="900"
+    letter-spacing="4.5"
+  >
+    <textPath href="#top-curve-path" startOffset="50%" text-anchor="middle">
+      FITNESS
+    </textPath>
+  </text>
+
+  <!-- Curved Bottom Text: RD FITNESS -->
+  <text
+    fill="#ffffff"
+    font-family="'Impact', 'Arial Black', 'Trebuchet MS', sans-serif"
+    font-size="36"
+    font-weight="900"
+    letter-spacing="3"
+  >
+    <textPath href="#bottom-curve-path" startOffset="50%" text-anchor="middle">
+      RD FITNESS
+    </textPath>
+  </text>
+
+  <!-- Left 3 Stars -->
+  <g fill="#ffffff">
+    <path
+      transform="translate(85, 172) rotate(-26) scale(1.18)"
+      d="M 0,-14 L 4.2,-4.3 L 14.5,-4.3 L 6.2,2.1 L 9.4,12.2 L 0,6.2 L -9.4,12.2 L -6.2,2.1 L -14.5,-4.3 L -4.2,-4.3 Z"
+    />
+    <path
+      transform="translate(64, 250) scale(1.35)"
+      d="M 0,-14 L 4.2,-4.3 L 14.5,-4.3 L 6.2,2.1 L 9.4,12.2 L 0,6.2 L -9.4,12.2 L -6.2,2.1 L -14.5,-4.3 L -4.2,-4.3 Z"
+    />
+    <path
+      transform="translate(85, 328) rotate(26) scale(1.18)"
+      d="M 0,-14 L 4.2,-4.3 L 14.5,-4.3 L 6.2,2.1 L 9.4,12.2 L 0,6.2 L -9.4,12.2 L -6.2,2.1 L -14.5,-4.3 L -4.2,-4.3 Z"
+    />
+
+    <!-- Right 3 Stars -->
+    <path
+      transform="translate(415, 172) rotate(26) scale(1.18)"
+      d="M 0,-14 L 4.2,-4.3 L 14.5,-4.3 L 6.2,2.1 L 9.4,12.2 L 0,6.2 L -9.4,12.2 L -6.2,2.1 L -14.5,-4.3 L -4.2,-4.3 Z"
+    />
+    <path
+      transform="translate(436, 250) scale(1.35)"
+      d="M 0,-14 L 4.2,-4.3 L 14.5,-4.3 L 6.2,2.1 L 9.4,12.2 L 0,6.2 L -9.4,12.2 L -6.2,2.1 L -14.5,-4.3 L -4.2,-4.3 Z"
+    />
+    <path
+      transform="translate(415, 328) rotate(-26) scale(1.18)"
+      d="M 0,-14 L 4.2,-4.3 L 14.5,-4.3 L 6.2,2.1 L 9.4,12.2 L 0,6.2 L -9.4,12.2 L -6.2,2.1 L -14.5,-4.3 L -4.2,-4.3 Z"
+    />
+  </g>
+
+  <!-- Central Inner Area: Barbell & RD -->
+  <g id="inner-emblem">
+    <!-- Barbell Assembly -->
+    <g id="barbell-graphic" fill="#000000">
+      <!-- Center Bar -->
+      <rect x="180" y="161" width="140" height="13" rx="3.5" fill="#000000" />
+      
+      <!-- Left Plates & Collar -->
+      <rect x="187" y="148" width="7" height="39" rx="2" fill="#000000" />
+      <path
+        d="M 160,120 Q 163,117 169,117 L 178,117 Q 184,117 186,120 L 186,215 Q 184,218 178,218 L 169,218 Q 163,218 160,215 Z"
+        fill="#000000"
+      />
+      <line x1="166" y1="123" x2="166" y2="212" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+      <line x1="180" y1="123" x2="180" y2="212" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+      
+      <path
+        d="M 142,132 Q 144,130 148,130 L 153,130 Q 157,130 159,132 L 159,203 Q 157,205 153,205 L 148,205 Q 144,205 142,203 Z"
+        fill="#000000"
+      />
+      <line x1="147" y1="135" x2="147" y2="200" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+      <rect x="133" y="163" width="9" height="9" rx="2" fill="#000000" />
+
+      <!-- Right Plates & Collar -->
+      <rect x="306" y="148" width="7" height="39" rx="2" fill="#000000" />
+      <path
+        d="M 314,120 Q 316,117 322,117 L 331,117 Q 337,117 340,120 L 340,215 Q 337,218 331,218 L 322,218 Q 316,218 314,215 Z"
+        fill="#000000"
+      />
+      <line x1="320" y1="123" x2="320" y2="212" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="334" y1="123" x2="334" y2="212" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+      
+      <path
+        d="M 341,132 Q 343,130 347,130 L 352,130 Q 356,130 358,132 L 358,203 Q 356,205 352,205 L 347,205 Q 343,205 341,203 Z"
+        fill="#000000"
+      />
+      <line x1="353" y1="135" x2="353" y2="200" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+      <rect x="358" y="163" width="9" height="9" rx="2" fill="#000000" />
+    </g>
+
+    <!-- RD Giant Letters -->
+    <text
+      x="250"
+      y="350"
+      text-anchor="middle"
+      font-family="'Impact', 'Arial Black', sans-serif"
+      font-size="148"
+      font-weight="900"
+      fill="#000000"
+      letter-spacing="-2"
+      transform="scale(1, 1.06) translate(0, -10)"
+    >
+      RD
+    </text>
+  </g>
+</svg>

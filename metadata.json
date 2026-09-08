@@ -1,0 +1,8 @@
+{
+  "name": "RD FITNESS - Gym & Fitness Center",
+  "description": "Premier fitness center located at NH 16, SR Market Complex, Jaraka, Jajpur. World-class equipment, fully air-conditioned, female-friendly, zero admission fee, and personal training by Debabrata Rath.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
