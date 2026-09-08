@@ -138,7 +138,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>© {new Date().getFullYear()} RD FITNESS. All rights reserved. SR Market Complex, Jaraka, Jajpur.</p>
           <p className="flex items-center gap-1">
-            <span>Built for Jaraka's Fitness Community</span>
+            <span>CRAFTED IN CODE BY [ PRATIK ↗ ]</span>
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-current inline" />
           </p>
         </div>
