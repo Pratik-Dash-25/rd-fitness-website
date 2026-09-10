@@ -1,7 +1,8 @@
 import { useState, FormEvent } from 'react';
 import { GYM_DETAILS } from '../data/gymData';
 import { createWhatsAppUrl } from '../utils/gymHelpers';
-import { MessageCircle, Phone, Instagram, Send, Sparkles, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { Phone, Instagram, Send, Sparkles, MapPin, Clock, ArrowRight } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function ContactCTA() {
   const [name, setName] = useState('');
@@ -22,7 +23,6 @@ export default function ContactCTA() {
     'Morning Batch (6:00 AM – 11:00 AM)',
     'Evening Batch (4:00 PM – 9:00 PM)',
     'Flexible / Both Batches',
-    'Sunday Only (6:00 AM – 10:00 AM)',
   ];
 
   const constructedMessage = `Hi RD Fitness! My name is ${name.trim() || '[Your Name]'}. I am interested in joining RD FITNESS Jaraka.
@@ -37,11 +37,11 @@ Please share enrollment details and slot availability.`;
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-neutral-900/60 border-t border-neutral-800 relative">
+    <section id="contact" className="py-10 sm:py-20 lg:py-28 bg-neutral-900/60 border-t border-neutral-800 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Direct Outreach Info */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-semibold uppercase tracking-wider mb-4">
                 <Sparkles className="w-3.5 h-3.5 text-rose-500" />
@@ -50,7 +50,7 @@ Please share enrollment details and slot availability.`;
               <h2 className="font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight text-white mb-4">
                 Ready To Start Your Transformation?
               </h2>
-              <p className="text-base text-neutral-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
                 Connect with us directly on WhatsApp or give us a quick call. Coach Debabrata and the RD FITNESS team are ready to welcome you with zero admission fees.
               </p>
             </div>
@@ -66,7 +66,7 @@ Please share enrollment details and slot availability.`;
               >
                 <div className="flex items-center gap-3.5">
                   <div className="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                    <MessageCircle className="w-6 h-6 fill-current" />
+                    <WhatsAppIcon className="w-6 h-6" />
                   </div>
                   <div>
                     <div className="text-sm font-bold text-white uppercase">Chat on WhatsApp</div>
@@ -118,13 +118,13 @@ Please share enrollment details and slot availability.`;
                 <MapPin className="w-3.5 h-3.5 text-rose-500" />
                 <span>SR Market Complex, NH 16, Jaraka, Jajpur</span>
               </div>
-              <p>Walk-ins welcome during morning (6-11 AM) and evening (4-9 PM) hours.</p>
+              <p>Walk-ins welcome Mon–Sat (6–11 AM & 4–9 PM). Sunday CLOSED.</p>
             </div>
           </div>
 
           {/* Right Column: Interactive WhatsApp Pre-fill Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-3xl bg-neutral-950 border border-neutral-800 shadow-2xl">
+            <div className="p-4 sm:p-8 rounded-3xl bg-neutral-950 border border-neutral-800 shadow-2xl">
               <div className="flex items-center justify-between border-b border-neutral-800/80 pb-4 mb-6">
                 <div>
                   <h3 className="font-display text-2xl font-bold uppercase text-white tracking-wide">
@@ -135,7 +135,7 @@ Please share enrollment details and slot availability.`;
                   </p>
                 </div>
                 <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
-                  <MessageCircle className="w-5 h-5 fill-current" />
+                  <WhatsAppIcon className="w-5 h-5" />
                 </div>
               </div>
 
@@ -224,7 +224,7 @@ Please share enrollment details and slot availability.`;
                   type="submit"
                   className="w-full py-3.5 px-6 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-lg shadow-rose-950/60 transition-all cursor-pointer"
                 >
-                  <Send className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4" />
                   <span>Send Message on WhatsApp</span>
                 </button>
               </form>

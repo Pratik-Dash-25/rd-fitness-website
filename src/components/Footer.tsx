@@ -1,6 +1,7 @@
 import { GYM_DETAILS } from '../data/gymData';
 import { createWhatsAppUrl } from '../utils/gymHelpers';
-import { MapPin, Phone, Instagram, MessageCircle, Clock, ShieldCheck, Heart } from 'lucide-react';
+import { MapPin, Phone, Instagram, Clock, ShieldCheck } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import RdFitnessLogo from './RdFitnessLogo';
 
 export default function Footer() {
@@ -74,9 +75,11 @@ export default function Footer() {
                 <p>Evening: 4:00 PM – 9:00 PM</p>
               </div>
               <div className="pt-2 border-t border-neutral-900">
-                <strong className="text-neutral-200 block">Sunday</strong>
-                <p>Morning: 6:00 AM – 10:00 AM</p>
-                <p className="text-neutral-500 text-[11px]">Evening session closed</p>
+                <div className="flex items-center justify-between">
+                  <strong className="text-neutral-200 block">Sunday</strong>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20">CLOSED</span>
+                </div>
+                <p className="text-rose-400/90 text-xs mt-0.5">Weekly Rest Day</p>
               </div>
             </div>
           </div>
@@ -108,7 +111,7 @@ export default function Footer() {
                 aria-label="WhatsApp"
                 className="w-9 h-9 rounded-xl bg-neutral-900 hover:bg-emerald-600 text-neutral-300 hover:text-white flex items-center justify-center transition-all border border-neutral-800"
               >
-                <MessageCircle className="w-4 h-4 fill-current" />
+                <WhatsAppIcon className="w-4 h-4" />
               </a>
               <a
                 id="footer-phone"
@@ -137,10 +140,23 @@ export default function Footer() {
       <div className="border-t border-neutral-900 bg-black/60 py-6 text-center text-xs text-neutral-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>© {new Date().getFullYear()} RD FITNESS. All rights reserved. SR Market Complex, Jaraka, Jajpur.</p>
-          <p className="flex items-center gap-1">
-            <span>CRAFTED IN CODE BY [ PRATIK ↗ ]</span>
-            <Heart className="w-3.5 h-3.5 text-rose-500 fill-current inline" />
-          </p>
+          <a
+            id="developer-credit"
+            href="https://wa.me/917991019466?text=Hi%20Pratik%2C%20I%20found%20your%20website%20work%20through%20the%20RD%20Fitness%20website.%20I'm%20interested%20in%20getting%20a%20website%20built%20for%20my%20business.%20Can%20you%20tell%20me%20more%3F"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 text-neutral-400 hover:text-neutral-200 transition-all duration-300 py-1 px-2 rounded cursor-pointer max-w-full flex-wrap justify-center"
+            aria-label="Website crafted by Pratik - Inquire on WhatsApp"
+          >
+            <span>Website crafted by</span>
+            <span className="font-semibold text-rose-400 group-hover:text-rose-300 group-hover:underline underline-offset-4 decoration-rose-500/60 group-hover:drop-shadow-[0_0_8px_rgba(244,63,94,0.45)] transition-all duration-300 transform group-hover:-translate-y-0.5">
+              Pratik
+            </span>
+            <span className="text-amber-400 text-xs inline-block transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5">
+              ⚡
+            </span>
+            <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400 inline-block transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5" />
+          </a>
         </div>
       </div>
     </footer>

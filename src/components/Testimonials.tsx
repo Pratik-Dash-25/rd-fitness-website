@@ -3,10 +3,10 @@ import { Star, Quote, ShieldCheck } from 'lucide-react';
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 sm:py-28 bg-neutral-900/40 border-t border-neutral-800">
+    <section id="testimonials" className="py-10 sm:py-20 lg:py-28 bg-neutral-900/40 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-semibold uppercase tracking-wider mb-4">
             <Quote className="w-3.5 h-3.5 text-rose-500" />
             <span>Community Stories</span>
@@ -14,18 +14,18 @@ export default function Testimonials() {
           <h2 className="font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight text-white mb-4">
             Loved By Lifters Across Jaraka & Jajpur
           </h2>
-          <p className="text-base sm:text-lg text-neutral-400 leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-neutral-400 leading-relaxed">
             Real feedback from our members training on NH 16. Hear about their experiences with our coach, equipment, and welcoming atmosphere.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
               id={`testimonial-${t.id}`}
-              className="p-7 rounded-2xl bg-neutral-950 border border-neutral-800 flex flex-col justify-between hover:border-neutral-700 transition-colors"
+              className="p-5 sm:p-7 rounded-2xl bg-neutral-950 border border-neutral-800 flex flex-col justify-between hover:border-neutral-700 transition-colors"
             >
               <div>
                 {/* Rating stars & date */}

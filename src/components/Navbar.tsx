@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { GYM_DETAILS } from '../data/gymData';
 import { createWhatsAppUrl, getGymCurrentStatus } from '../utils/gymHelpers';
-import { Menu, X, Phone, MessageCircle, Clock, MapPin, Instagram } from 'lucide-react';
+import { Menu, X, Phone, Clock, MapPin, Instagram } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import RdFitnessLogo from './RdFitnessLogo';
 
 export default function Navbar() {
@@ -46,7 +47,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="w-3.5 h-3.5 text-rose-500" />
-              <span>Mon-Sat: 6-11 AM & 4-9 PM | Sun: 6-10 AM</span>
+              <span>Mon-Sat: 6-11 AM & 4-9 PM | Sun: Closed</span>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -124,7 +125,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold uppercase tracking-wide rounded-lg bg-rose-600 hover:bg-rose-500 text-white shadow-lg shadow-rose-900/40 hover:shadow-rose-700/50 transition-all hover:scale-[1.02]"
             >
-              <MessageCircle className="w-4 h-4 fill-current" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>Join on WhatsApp</span>
             </a>
           </div>
@@ -188,7 +189,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-rose-950/50"
             >
-              <MessageCircle className="w-4 h-4 fill-current" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>Join via WhatsApp</span>
             </a>
 

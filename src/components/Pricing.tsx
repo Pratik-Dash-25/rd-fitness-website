@@ -1,13 +1,14 @@
 import { PLANS } from '../data/gymData';
 import { createWhatsAppUrl } from '../utils/gymHelpers';
-import { Check, MessageCircle, ShieldCheck, Sparkles } from 'lucide-react';
+import { Check, ShieldCheck, Sparkles } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 sm:py-28 bg-neutral-950 relative">
+    <section id="pricing" className="py-10 sm:py-20 lg:py-28 bg-neutral-950 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5 text-rose-500" />
             <span>Honest & Transparent Pricing</span>
@@ -24,8 +25,79 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 items-stretch">
+        {/* Mobile Membership View (Compact list/card stack) */}
+        <div className="block md:hidden space-y-3">
+          {PLANS.map((plan) => {
+            return (
+              <div
+                key={`mobile-${plan.id}`}
+                id={`mobile-pricing-${plan.id}`}
+                className={`p-4 rounded-2xl border transition-all ${
+                  plan.bestValue
+                    ? 'bg-gradient-to-r from-rose-950/40 via-neutral-900 to-neutral-900 border-rose-500 shadow-lg shadow-rose-950/50'
+                    : plan.popular
+                    ? 'bg-neutral-900 border-neutral-700'
+                    : 'bg-neutral-900/60 border-neutral-800'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-display text-lg font-bold uppercase text-white tracking-wide truncate">
+                        {plan.name}
+                      </h3>
+                      {plan.badge && (
+                        <span
+                          className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider ${
+                            plan.bestValue
+                              ? 'bg-rose-600 text-white'
+                              : 'bg-neutral-800 text-amber-300 border border-amber-400/30'
+                          }`}
+                        >
+                          {plan.badge}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="font-display text-2xl font-bold text-white tracking-tight">
+                        ₹{plan.price.toLocaleString('en-IN')}
+                      </span>
+                      {plan.originalPrice && (
+                        <span className="text-[11px] text-neutral-500 line-through">
+                          ₹{plan.originalPrice.toLocaleString('en-IN')}
+                        </span>
+                      )}
+                      <span className="text-xs text-neutral-400 font-medium">
+                        • {plan.periodDescription}
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-emerald-400 font-medium mt-0.5">
+                      ✓ ₹0 Admission Fee • Full AC Access
+                    </div>
+                  </div>
+
+                  <a
+                    id={`mobile-plan-join-btn-${plan.id}`}
+                    href={createWhatsAppUrl(plan.whatsappMessage)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`shrink-0 py-2.5 px-4 rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold uppercase tracking-wider shadow-md transition-all ${
+                      plan.bestValue
+                        ? 'bg-rose-600 hover:bg-rose-500 text-white shadow-rose-950/60'
+                        : 'bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700'
+                    }`}
+                  >
+                    <WhatsAppIcon className="w-3.5 h-3.5" />
+                    <span>JOIN NOW</span>
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop Pricing Cards Grid */}
+        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-6 items-stretch">
           {PLANS.map((plan) => {
             const isHighlight = plan.popular || plan.bestValue;
 
@@ -107,7 +179,7 @@ export default function Pricing() {
                         : 'bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 hover:border-neutral-700'
                     }`}
                   >
-                    <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                    <WhatsAppIcon className="w-3.5 h-3.5" />
                     <span>Join on WhatsApp</span>
                   </a>
                 </div>

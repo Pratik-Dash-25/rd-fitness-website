@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createWhatsAppUrl } from '../utils/gymHelpers';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(true);
@@ -14,10 +15,10 @@ export default function FloatingWhatsApp() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2 pointer-events-none">
-      {/* Tooltip speech bubble */}
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2 pointer-events-none">
+      {/* Tooltip speech bubble (hidden on tiny screens if unnecessary, or compact) */}
       {showTooltip && (
-        <div className="pointer-events-auto relative p-3 rounded-2xl bg-neutral-900 border border-neutral-700 text-xs text-white shadow-2xl max-w-[220px] animate-in fade-in slide-in-from-bottom-2">
+        <div className="pointer-events-auto relative p-2.5 sm:p-3 rounded-2xl bg-neutral-900/95 backdrop-blur-md border border-neutral-700 text-xs text-white shadow-2xl max-w-[200px] sm:max-w-[220px] animate-in fade-in slide-in-from-bottom-2">
           <button
             type="button"
             onClick={() => setShowTooltip(false)}
@@ -27,10 +28,10 @@ export default function FloatingWhatsApp() {
             <X className="w-3 h-3" />
           </button>
           <div className="font-bold text-rose-400 uppercase text-[10px] tracking-wider mb-0.5">
-            Quick Inquiry
+            Direct WhatsApp
           </div>
           <p className="text-neutral-300 text-[11px] leading-snug">
-            Chat with Coach Debabrata on WhatsApp for gym slots & joining!
+            Chat with Coach Debabrata for gym slots & membership!
           </p>
         </div>
       )}
@@ -42,11 +43,11 @@ export default function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="pointer-events-auto relative group flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-xl shadow-emerald-950/60 hover:shadow-emerald-500/50 hover:scale-105 active:scale-95 transition-all"
+        className="pointer-events-auto relative group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-xl shadow-emerald-950/60 hover:shadow-emerald-500/50 hover:scale-105 active:scale-95 transition-all"
       >
         {/* Pulsing ring animation */}
         <span className="absolute -inset-1 rounded-full bg-emerald-500/40 animate-ping pointer-events-none" />
-        <MessageCircle className="w-7 h-7 fill-current relative z-10" />
+        <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 relative z-10" />
       </a>
     </div>
   );

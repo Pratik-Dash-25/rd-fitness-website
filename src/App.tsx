@@ -15,12 +15,12 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col font-sans w-full max-w-full overflow-x-hidden">
       {/* Navigation */}
       <Navbar />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         <Hero />
         <Statistics />
         <WhyChooseUs />

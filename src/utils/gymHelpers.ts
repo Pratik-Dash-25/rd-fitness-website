@@ -27,22 +27,13 @@ export function getGymCurrentStatus(): GymStatus {
     const currentMinutes = hour * 60 + minute;
 
     if (day === 0) {
-      // Sunday: 6:00 AM - 10:00 AM (360 to 600)
-      if (currentMinutes >= 360 && currentMinutes < 600) {
-        return {
-          isOpen: true,
-          statusText: 'Open Now (Sunday Batch)',
-          badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-          slotDetail: 'Closes today at 10:00 AM',
-        };
-      } else {
-        return {
-          isOpen: false,
-          statusText: 'Closed Now',
-          badgeColor: 'bg-neutral-800 text-neutral-400 border-neutral-700',
-          slotDetail: 'Opens Monday at 6:00 AM',
-        };
-      }
+      // Sunday: Strictly CLOSED all day
+      return {
+        isOpen: false,
+        statusText: 'Closed Today (Sunday)',
+        badgeColor: 'bg-rose-500/20 text-rose-400 border-rose-500/30',
+        slotDetail: 'Sunday is a rest day • Opens Monday at 6:00 AM',
+      };
     } else {
       // Mon - Sat:
       // Morning: 6:00 AM - 11:00 AM (360 to 660)
@@ -76,20 +67,21 @@ export function getGymCurrentStatus(): GymStatus {
           slotDetail: 'Evening batch opens at 4:00 PM',
         };
       } else {
+        const nextOpen = day === 6 ? 'Opens Monday at 6:00 AM (Sunday Closed)' : 'Opens tomorrow at 6:00 AM';
         return {
           isOpen: false,
           statusText: 'Closed for the Night',
           badgeColor: 'bg-neutral-800 text-neutral-400 border-neutral-700',
-          slotDetail: 'Opens tomorrow at 6:00 AM',
+          slotDetail: nextOpen,
         };
       }
     }
   } catch {
     return {
-      isOpen: true,
-      statusText: 'Open Daily (Mon-Sat: 6-11 AM & 4-9 PM | Sun: 6-10 AM)',
-      badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-      slotDetail: 'Visit during active slots',
+      isOpen: false,
+      statusText: 'Mon–Sat: 6–11 AM & 4–9 PM (Sun Closed)',
+      badgeColor: 'bg-neutral-800 text-neutral-400 border-neutral-700',
+      slotDetail: 'Sunday Closed • Open Mon–Sat',
     };
   }
 }
